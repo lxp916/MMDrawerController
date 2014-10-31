@@ -689,6 +689,8 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     [self.centerViewController beginAppearanceTransition:YES animated:animated];
     
     if(self.openSide == MMDrawerSideLeft) {
@@ -714,6 +716,8 @@ static NSString *MMDrawerOpenSideKey = @"MMDrawerOpenSide";
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
     [self.centerViewController beginAppearanceTransition:NO animated:animated];
     if(self.openSide == MMDrawerSideLeft) {
         [self.leftDrawerViewController beginAppearanceTransition:NO animated:animated];
